@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Scheme LastUpgradeVersion="2700" version="1.3">
+  <BuildAction parallelizeBuildables="YES" buildImplicitDependencies="YES"><BuildActionEntries>
+    <BuildActionEntry buildForTesting="YES" buildForRunning="YES" buildForProfiling="YES" buildForArchiving="YES" buildForAnalyzing="YES"><BuildableReference BuildableIdentifier="primary" BlueprintIdentifier="06D01A097AAF9BF1362906BD" BuildableName="SocialLess.app" BlueprintName="SocialLess" ReferencedContainer="container:SocialLess.xcodeproj"/></BuildActionEntry>
+  </BuildActionEntries></BuildAction>
+  <TestAction buildConfiguration="Debug" selectedDebuggerIdentifier="Xcode.DebuggerFoundation.Debugger.LLDB" selectedLauncherIdentifier="Xcode.IDEFoundation.Launcher.LLDB" shouldUseLaunchSchemeArgsEnv="YES"><Testables>
+    <TestableReference skipped="NO"><BuildableReference BuildableIdentifier="primary" BlueprintIdentifier="E947F0CC40FADA34148A81E7" BuildableName="SocialLessTests.xctest" BlueprintName="SocialLessTests" ReferencedContainer="container:SocialLess.xcodeproj"/></TestableReference>
+    <TestableReference skipped="NO"><BuildableReference BuildableIdentifier="primary" BlueprintIdentifier="94E4F65F42DDB5989F27BB90" BuildableName="SocialLessUITests.xctest" BlueprintName="SocialLessUITests" ReferencedContainer="container:SocialLess.xcodeproj"/></TestableReference>
+  </Testables></TestAction>
+  <LaunchAction buildConfiguration="Debug" selectedDebuggerIdentifier="Xcode.DebuggerFoundation.Debugger.LLDB" selectedLauncherIdentifier="Xcode.IDEFoundation.Launcher.LLDB" launchStyle="0" useCustomWorkingDirectory="NO" ignoresPersistentStateOnLaunch="NO" debugServiceExtension="internal" allowLocationSimulation="YES"><BuildableProductRunnable runnableDebuggingMode="0"><BuildableReference BuildableIdentifier="primary" BlueprintIdentifier="06D01A097AAF9BF1362906BD" BuildableName="SocialLess.app" BlueprintName="SocialLess" ReferencedContainer="container:SocialLess.xcodeproj"/></BuildableProductRunnable></LaunchAction>
+  <ProfileAction buildConfiguration="Release" shouldUseLaunchSchemeArgsEnv="YES" savedToolIdentifier="" useCustomWorkingDirectory="NO" debugDocumentVersioning="YES"><BuildableProductRunnable runnableDebuggingMode="0"><BuildableReference BuildableIdentifier="primary" BlueprintIdentifier="06D01A097AAF9BF1362906BD" BuildableName="SocialLess.app" BlueprintName="SocialLess" ReferencedContainer="container:SocialLess.xcodeproj"/></BuildableProductRunnable></ProfileAction>
+  <AnalyzeAction buildConfiguration="Debug"/>
+  <ArchiveAction buildConfiguration="Release" revealArchiveInOrganizer="YES"/>
+</Scheme>

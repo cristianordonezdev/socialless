@@ -1,0 +1,550 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		128E6039708D5811A45DD54D /* SocialLessTests/UsageSummaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C710BBF01AA205E03CDC0B8D /* SocialLessTests/UsageSummaryTests.swift */; };
+		1B5ACDFC617D34A52F8625D7 /* SocialLess/Domain/SessionEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6679FD4AA4029EE18683362 /* SocialLess/Domain/SessionEngine.swift */; };
+		1E570BA5511F12413D2A223E /* SocialLess/DesignSystem/Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BFF01B6479E9E96B0AED3D /* SocialLess/DesignSystem/Theme.swift */; };
+		22A8E0DA40C59963AF5A52B9 /* SocialLessTests/BrowserControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D59286709733DE44F0E0F9 /* SocialLessTests/BrowserControllerTests.swift */; };
+		238A2DFAC46F2E34011B9A4A /* SocialLess/Features/DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882D4A72217CAF64BDEDC9CA /* SocialLess/Features/DashboardView.swift */; };
+		2C301C648A726A25C9CC29CD /* SocialLessUITests/SessionFlowUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C086D32816912278CA73A75 /* SocialLessUITests/SessionFlowUITests.swift */; };
+		2FFE062141163902F34C855E /* SocialLess/Resources/Demo/facebook_fixture.html in Resources */ = {isa = PBXBuildFile; fileRef = E4DC1741850B2F286F5BF357 /* SocialLess/Resources/Demo/facebook_fixture.html */; };
+		41743AC4F7C81BD1EEE59238 /* SocialLess/Features/SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2420EE674B9F262F910ADE73 /* SocialLess/Features/SettingsView.swift */; };
+		46320FF1E73005E19EF807B0 /* SocialLess/App/AppContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEB544AD6E11AA3029AE3F6 /* SocialLess/App/AppContainer.swift */; };
+		4901D35C785782B183EE1D73 /* SocialLess/Domain/Repositories.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9EDA154988D4745B4419D02 /* SocialLess/Domain/Repositories.swift */; };
+		50ADF7562FC04A23D1C490A0 /* SocialLess/Features/RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29A11B52FE5D1CAC91C3644 /* SocialLess/Features/RootView.swift */; };
+		5B0D1199A461366544C44381 /* SocialLess/Domain/Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = F234D3D707EE72D7F59D0503 /* SocialLess/Domain/Models.swift */; };
+		5EFD3BC0751D573A1CF179AF /* SocialLess/Resources/PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 0D81563E03F9401BEDF401AA /* SocialLess/Resources/PrivacyInfo.xcprivacy */; };
+		6B6B67010276F38174459C36 /* SocialLess/Domain/SessionClock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3452E8EC602F4D953D46CD7 /* SocialLess/Domain/SessionClock.swift */; };
+		7E284BBAB4F035EB59BF436A /* SocialLess/Resources/Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBE5864D28A2F477281140E5 /* SocialLess/Resources/Assets.xcassets */; };
+		8513F95F56D2C62FF65892E7 /* SocialLess/Features/SessionFlowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E8F37351CFC2B332972E56 /* SocialLess/Features/SessionFlowView.swift */; };
+		86440579D339B18341DD9ACC /* SocialLess/Features/OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C78A86D776FEF6485E34385 /* SocialLess/Features/OnboardingView.swift */; };
+		8991211EB6C748FE91E74558 /* SocialLess/Features/InsightsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90ADBB2310A5F79D1369051B /* SocialLess/Features/InsightsView.swift */; };
+		8BCF13F0FBAEB21F6F634D3E /* SocialLess/Resources/Demo/instagram_fixture.html in Resources */ = {isa = PBXBuildFile; fileRef = 7F3BBB785B571EDCF18C4680 /* SocialLess/Resources/Demo/instagram_fixture.html */; };
+		A229EA386D986D0CD9687256 /* SocialLess/App/SocialLessApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E562533C97C6175AF988623 /* SocialLess/App/SocialLessApp.swift */; };
+		AE42607D0CB0F9B9EC49AC77 /* SocialLessTests/SessionTimerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B10825AF433F1CF5DA8CF68 /* SocialLessTests/SessionTimerTests.swift */; };
+		B6BC6D94F54625080C66216C /* SocialLess/Domain/UsageSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1241274EEECCC2A2B1411983 /* SocialLess/Domain/UsageSummary.swift */; };
+		C6C33EF174832AEF0EF36379 /* SocialLessTests/TestDoubles.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25D37E240B316ADA8889F8F /* SocialLessTests/TestDoubles.swift */; };
+		D0968345A282FE997697ED41 /* SocialLess/Resources/Demo/tiktok_fixture.html in Resources */ = {isa = PBXBuildFile; fileRef = 0F29172B9BAE051A7DB9632F /* SocialLess/Resources/Demo/tiktok_fixture.html */; };
+		E04F9FB945B2B603CE52F9A4 /* SocialLessTests/PlatformNavigationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5915D608B05E638B0AED0606 /* SocialLessTests/PlatformNavigationTests.swift */; };
+		E744F963CBC07CB5E9A9D721 /* SocialLessTests/SessionRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E8FD7E91B50023F5D896A5 /* SocialLessTests/SessionRepositoryTests.swift */; };
+		F0FE19563E15250CC9B76BF2 /* SocialLess/Infrastructure/Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1EBB8F2C54B17D07F5952D /* SocialLess/Infrastructure/Persistence.swift */; };
+		FAA61114A9B5C90C4A7E4154 /* SocialLess/Infrastructure/WebNavigationPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A142AD810B38C262C0D73143 /* SocialLess/Infrastructure/WebNavigationPolicy.swift */; };
+		FCCDE0F34BC95AD2F5BE4238 /* SocialLess/Features/BrowserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17FCFC7E0B640D4E6B05F71 /* SocialLess/Features/BrowserView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BA7D0D0233B841B1AA8D88CD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 244210E48437B6556980A702 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 06D01A097AAF9BF1362906BD;
+			remoteInfo = SocialLess;
+		};
+		C4D543DD409067EA28168143 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 244210E48437B6556980A702 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 06D01A097AAF9BF1362906BD;
+			remoteInfo = SocialLess;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0D81563E03F9401BEDF401AA /* SocialLess/Resources/PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = SocialLess/Resources/PrivacyInfo.xcprivacy; sourceTree = SOURCE_ROOT; };
+		0F29172B9BAE051A7DB9632F /* SocialLess/Resources/Demo/tiktok_fixture.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = SocialLess/Resources/Demo/tiktok_fixture.html; sourceTree = SOURCE_ROOT; };
+		1241274EEECCC2A2B1411983 /* SocialLess/Domain/UsageSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialLess/Domain/UsageSummary.swift; sourceTree = SOURCE_ROOT; };
+		2420EE674B9F262F910ADE73 /* SocialLess/Features/SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialLess/Features/SettingsView.swift; sourceTree = SOURCE_ROOT; };
+		2C086D32816912278CA73A75 /* SocialLessUITests/SessionFlowUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialLessUITests/SessionFlowUITests.swift; sourceTree = SOURCE_ROOT; };
+		3A1EBB8F2C54B17D07F5952D /* SocialLess/Infrastructure/Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialLess/Infrastructure/Persistence.swift; sourceTree = SOURCE_ROOT; };
+		3DEB544AD6E11AA3029AE3F6 /* SocialLess/App/AppContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialLess/App/AppContainer.swift; sourceTree = SOURCE_ROOT; };
+		49E8F37351CFC2B332972E56 /* SocialLess/Features/SessionFlowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialLess/Features/SessionFlowView.swift; sourceTree = SOURCE_ROOT; };
+		49E8FD7E91B50023F5D896A5 /* SocialLessTests/SessionRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialLessTests/SessionRepositoryTests.swift; sourceTree = SOURCE_ROOT; };
+		4B10825AF433F1CF5DA8CF68 /* SocialLessTests/SessionTimerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialLessTests/SessionTimerTests.swift; sourceTree = SOURCE_ROOT; };
+		4C78A86D776FEF6485E34385 /* SocialLess/Features/OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialLess/Features/OnboardingView.swift; sourceTree = SOURCE_ROOT; };
+		5915D608B05E638B0AED0606 /* SocialLessTests/PlatformNavigationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialLessTests/PlatformNavigationTests.swift; sourceTree = SOURCE_ROOT; };
+		6D85337945A3918C736107CC /* SocialLessUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; path = SocialLessUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7F3BBB785B571EDCF18C4680 /* SocialLess/Resources/Demo/instagram_fixture.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = SocialLess/Resources/Demo/instagram_fixture.html; sourceTree = SOURCE_ROOT; };
+		86D59286709733DE44F0E0F9 /* SocialLessTests/BrowserControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialLessTests/BrowserControllerTests.swift; sourceTree = SOURCE_ROOT; };
+		882D4A72217CAF64BDEDC9CA /* SocialLess/Features/DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialLess/Features/DashboardView.swift; sourceTree = SOURCE_ROOT; };
+		90ADBB2310A5F79D1369051B /* SocialLess/Features/InsightsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialLess/Features/InsightsView.swift; sourceTree = SOURCE_ROOT; };
+		9E562533C97C6175AF988623 /* SocialLess/App/SocialLessApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialLess/App/SocialLessApp.swift; sourceTree = SOURCE_ROOT; };
+		A142AD810B38C262C0D73143 /* SocialLess/Infrastructure/WebNavigationPolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialLess/Infrastructure/WebNavigationPolicy.swift; sourceTree = SOURCE_ROOT; };
+		A17FCFC7E0B640D4E6B05F71 /* SocialLess/Features/BrowserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialLess/Features/BrowserView.swift; sourceTree = SOURCE_ROOT; };
+		AED66E2F00FDA041F269485A /* SocialLessTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; path = SocialLessTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B25D37E240B316ADA8889F8F /* SocialLessTests/TestDoubles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialLessTests/TestDoubles.swift; sourceTree = SOURCE_ROOT; };
+		B5B97239086FBF2C54C89CB7 /* SocialLess.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; path = SocialLess.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C710BBF01AA205E03CDC0B8D /* SocialLessTests/UsageSummaryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialLessTests/UsageSummaryTests.swift; sourceTree = SOURCE_ROOT; };
+		D0BFF01B6479E9E96B0AED3D /* SocialLess/DesignSystem/Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialLess/DesignSystem/Theme.swift; sourceTree = SOURCE_ROOT; };
+		D6679FD4AA4029EE18683362 /* SocialLess/Domain/SessionEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialLess/Domain/SessionEngine.swift; sourceTree = SOURCE_ROOT; };
+		DBE5864D28A2F477281140E5 /* SocialLess/Resources/Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = SocialLess/Resources/Assets.xcassets; sourceTree = SOURCE_ROOT; };
+		E29A11B52FE5D1CAC91C3644 /* SocialLess/Features/RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialLess/Features/RootView.swift; sourceTree = SOURCE_ROOT; };
+		E3452E8EC602F4D953D46CD7 /* SocialLess/Domain/SessionClock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialLess/Domain/SessionClock.swift; sourceTree = SOURCE_ROOT; };
+		E4DC1741850B2F286F5BF357 /* SocialLess/Resources/Demo/facebook_fixture.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = SocialLess/Resources/Demo/facebook_fixture.html; sourceTree = SOURCE_ROOT; };
+		F234D3D707EE72D7F59D0503 /* SocialLess/Domain/Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialLess/Domain/Models.swift; sourceTree = SOURCE_ROOT; };
+		F9EDA154988D4745B4419D02 /* SocialLess/Domain/Repositories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialLess/Domain/Repositories.swift; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		49BBD4EE944CBD0094505382 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		56307CE253DDBACD75A65E2A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A9A9B5512E91C9CAD3537E0A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0A3E27B8CA818264D75C8D81 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B5B97239086FBF2C54C89CB7 /* SocialLess.app */,
+				AED66E2F00FDA041F269485A /* SocialLessTests.xctest */,
+				6D85337945A3918C736107CC /* SocialLessUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0D6E4079E36703EBD37C0072 = {
+			isa = PBXGroup;
+			children = (
+				E4292396D6BC17866826F3D8 /* SocialLess */,
+				1173D3A9E652FD2FA444DE3B /* SocialLessTests */,
+				77448FBDA69B510DDB9324E2 /* SocialLessUITests */,
+				0A3E27B8CA818264D75C8D81 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1173D3A9E652FD2FA444DE3B /* SocialLessTests */ = {
+			isa = PBXGroup;
+			children = (
+				86D59286709733DE44F0E0F9 /* SocialLessTests/BrowserControllerTests.swift */,
+				5915D608B05E638B0AED0606 /* SocialLessTests/PlatformNavigationTests.swift */,
+				49E8FD7E91B50023F5D896A5 /* SocialLessTests/SessionRepositoryTests.swift */,
+				4B10825AF433F1CF5DA8CF68 /* SocialLessTests/SessionTimerTests.swift */,
+				B25D37E240B316ADA8889F8F /* SocialLessTests/TestDoubles.swift */,
+				C710BBF01AA205E03CDC0B8D /* SocialLessTests/UsageSummaryTests.swift */,
+			);
+			name = SocialLessTests;
+			sourceTree = "<group>";
+		};
+		77448FBDA69B510DDB9324E2 /* SocialLessUITests */ = {
+			isa = PBXGroup;
+			children = (
+				2C086D32816912278CA73A75 /* SocialLessUITests/SessionFlowUITests.swift */,
+			);
+			name = SocialLessUITests;
+			sourceTree = "<group>";
+		};
+		E4292396D6BC17866826F3D8 /* SocialLess */ = {
+			isa = PBXGroup;
+			children = (
+				3DEB544AD6E11AA3029AE3F6 /* SocialLess/App/AppContainer.swift */,
+				9E562533C97C6175AF988623 /* SocialLess/App/SocialLessApp.swift */,
+				D0BFF01B6479E9E96B0AED3D /* SocialLess/DesignSystem/Theme.swift */,
+				F234D3D707EE72D7F59D0503 /* SocialLess/Domain/Models.swift */,
+				F9EDA154988D4745B4419D02 /* SocialLess/Domain/Repositories.swift */,
+				E3452E8EC602F4D953D46CD7 /* SocialLess/Domain/SessionClock.swift */,
+				D6679FD4AA4029EE18683362 /* SocialLess/Domain/SessionEngine.swift */,
+				1241274EEECCC2A2B1411983 /* SocialLess/Domain/UsageSummary.swift */,
+				A17FCFC7E0B640D4E6B05F71 /* SocialLess/Features/BrowserView.swift */,
+				882D4A72217CAF64BDEDC9CA /* SocialLess/Features/DashboardView.swift */,
+				90ADBB2310A5F79D1369051B /* SocialLess/Features/InsightsView.swift */,
+				4C78A86D776FEF6485E34385 /* SocialLess/Features/OnboardingView.swift */,
+				E29A11B52FE5D1CAC91C3644 /* SocialLess/Features/RootView.swift */,
+				49E8F37351CFC2B332972E56 /* SocialLess/Features/SessionFlowView.swift */,
+				2420EE674B9F262F910ADE73 /* SocialLess/Features/SettingsView.swift */,
+				3A1EBB8F2C54B17D07F5952D /* SocialLess/Infrastructure/Persistence.swift */,
+				A142AD810B38C262C0D73143 /* SocialLess/Infrastructure/WebNavigationPolicy.swift */,
+				E4DC1741850B2F286F5BF357 /* SocialLess/Resources/Demo/facebook_fixture.html */,
+				7F3BBB785B571EDCF18C4680 /* SocialLess/Resources/Demo/instagram_fixture.html */,
+				0F29172B9BAE051A7DB9632F /* SocialLess/Resources/Demo/tiktok_fixture.html */,
+				0D81563E03F9401BEDF401AA /* SocialLess/Resources/PrivacyInfo.xcprivacy */,
+				DBE5864D28A2F477281140E5 /* SocialLess/Resources/Assets.xcassets */,
+			);
+			name = SocialLess;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		06D01A097AAF9BF1362906BD /* SocialLess */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8BFF460D7F578FA85A9D64E2 /* Build configuration list for PBXNativeTarget "SocialLess" */;
+			buildPhases = (
+				B12CD14D3C4A277C01DD6A6F /* Sources */,
+				56307CE253DDBACD75A65E2A /* Frameworks */,
+				119B6C89A8FED23D4A254E92 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SocialLess;
+			productName = SocialLess;
+			productReference = B5B97239086FBF2C54C89CB7 /* SocialLess.app */;
+			productType = "com.apple.product-type.application";
+		};
+		94E4F65F42DDB5989F27BB90 /* SocialLessUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C36DD13B4FCEC53AF783CE02 /* Build configuration list for PBXNativeTarget "SocialLessUITests" */;
+			buildPhases = (
+				D70E38335039DCC998B66A5C /* Sources */,
+				49BBD4EE944CBD0094505382 /* Frameworks */,
+				0876F52BB033E388020BF43C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FFC3E1EC9AE36C06F1094437 /* PBXTargetDependency */,
+			);
+			name = SocialLessUITests;
+			productName = SocialLessUITests;
+			productReference = 6D85337945A3918C736107CC /* SocialLessUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		E947F0CC40FADA34148A81E7 /* SocialLessTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 040090CEC300C6F686730130 /* Build configuration list for PBXNativeTarget "SocialLessTests" */;
+			buildPhases = (
+				16FDC11D1535BD986B5F61AE /* Sources */,
+				A9A9B5512E91C9CAD3537E0A /* Frameworks */,
+				AA3FDACB9D03D0DFEF9E66D5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				449089FDB7C19E78DF760B44 /* PBXTargetDependency */,
+			);
+			name = SocialLessTests;
+			productName = SocialLessTests;
+			productReference = AED66E2F00FDA041F269485A /* SocialLessTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		244210E48437B6556980A702 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 2700;
+			};
+			buildConfigurationList = 76F8DEC3DFE0BDB465198890 /* Build configuration list for PBXProject "SocialLess" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 0D6E4079E36703EBD37C0072;
+			productRefGroup = 0A3E27B8CA818264D75C8D81 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				06D01A097AAF9BF1362906BD /* SocialLess */,
+				E947F0CC40FADA34148A81E7 /* SocialLessTests */,
+				94E4F65F42DDB5989F27BB90 /* SocialLessUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0876F52BB033E388020BF43C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		119B6C89A8FED23D4A254E92 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2FFE062141163902F34C855E /* SocialLess/Resources/Demo/facebook_fixture.html in Resources */,
+				8BCF13F0FBAEB21F6F634D3E /* SocialLess/Resources/Demo/instagram_fixture.html in Resources */,
+				D0968345A282FE997697ED41 /* SocialLess/Resources/Demo/tiktok_fixture.html in Resources */,
+				5EFD3BC0751D573A1CF179AF /* SocialLess/Resources/PrivacyInfo.xcprivacy in Resources */,
+				7E284BBAB4F035EB59BF436A /* SocialLess/Resources/Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA3FDACB9D03D0DFEF9E66D5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		16FDC11D1535BD986B5F61AE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22A8E0DA40C59963AF5A52B9 /* SocialLessTests/BrowserControllerTests.swift in Sources */,
+				E04F9FB945B2B603CE52F9A4 /* SocialLessTests/PlatformNavigationTests.swift in Sources */,
+				E744F963CBC07CB5E9A9D721 /* SocialLessTests/SessionRepositoryTests.swift in Sources */,
+				AE42607D0CB0F9B9EC49AC77 /* SocialLessTests/SessionTimerTests.swift in Sources */,
+				C6C33EF174832AEF0EF36379 /* SocialLessTests/TestDoubles.swift in Sources */,
+				128E6039708D5811A45DD54D /* SocialLessTests/UsageSummaryTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B12CD14D3C4A277C01DD6A6F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				46320FF1E73005E19EF807B0 /* SocialLess/App/AppContainer.swift in Sources */,
+				A229EA386D986D0CD9687256 /* SocialLess/App/SocialLessApp.swift in Sources */,
+				1E570BA5511F12413D2A223E /* SocialLess/DesignSystem/Theme.swift in Sources */,
+				5B0D1199A461366544C44381 /* SocialLess/Domain/Models.swift in Sources */,
+				4901D35C785782B183EE1D73 /* SocialLess/Domain/Repositories.swift in Sources */,
+				6B6B67010276F38174459C36 /* SocialLess/Domain/SessionClock.swift in Sources */,
+				1B5ACDFC617D34A52F8625D7 /* SocialLess/Domain/SessionEngine.swift in Sources */,
+				B6BC6D94F54625080C66216C /* SocialLess/Domain/UsageSummary.swift in Sources */,
+				FCCDE0F34BC95AD2F5BE4238 /* SocialLess/Features/BrowserView.swift in Sources */,
+				238A2DFAC46F2E34011B9A4A /* SocialLess/Features/DashboardView.swift in Sources */,
+				8991211EB6C748FE91E74558 /* SocialLess/Features/InsightsView.swift in Sources */,
+				86440579D339B18341DD9ACC /* SocialLess/Features/OnboardingView.swift in Sources */,
+				50ADF7562FC04A23D1C490A0 /* SocialLess/Features/RootView.swift in Sources */,
+				8513F95F56D2C62FF65892E7 /* SocialLess/Features/SessionFlowView.swift in Sources */,
+				41743AC4F7C81BD1EEE59238 /* SocialLess/Features/SettingsView.swift in Sources */,
+				F0FE19563E15250CC9B76BF2 /* SocialLess/Infrastructure/Persistence.swift in Sources */,
+				FAA61114A9B5C90C4A7E4154 /* SocialLess/Infrastructure/WebNavigationPolicy.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D70E38335039DCC998B66A5C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C301C648A726A25C9CC29CD /* SocialLessUITests/SessionFlowUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		449089FDB7C19E78DF760B44 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 06D01A097AAF9BF1362906BD /* SocialLess */;
+			targetProxy = BA7D0D0233B841B1AA8D88CD /* PBXContainerItemProxy */;
+		};
+		FFC3E1EC9AE36C06F1094437 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 06D01A097AAF9BF1362906BD /* SocialLess */;
+			targetProxy = C4D543DD409067EA28168143 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0B0C687DF8B6B8DC790B519C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_TESTABILITY = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		712F6B5ABC2FF7CE79F09DE5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				GENERATE_INFOPLIST_FILE = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.socialless.SocialLessTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SocialLess.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SocialLess";
+			};
+			name = Release;
+		};
+		73EBF6644258C120893E685D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_TESTABILITY = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		76A094E1637673248418C55A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = C56MXRUHH4;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = SocialLess;
+				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = NO;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIFileSharingEnabled = NO;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.socialless.SocialLess;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		8AB1834E8289ADCBE45CF5C6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				GENERATE_INFOPLIST_FILE = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.socialless.SocialLessTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SocialLess.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SocialLess";
+			};
+			name = Debug;
+		};
+		8EB372E67C23D8292FCEEC52 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				GENERATE_INFOPLIST_FILE = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.socialless.SocialLessUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_TARGET_NAME = SocialLess;
+			};
+			name = Debug;
+		};
+		AB1D87072E208850DF402D76 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				GENERATE_INFOPLIST_FILE = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.socialless.SocialLessUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_TARGET_NAME = SocialLess;
+			};
+			name = Release;
+		};
+		CBF01FB5FC59558C33DCD2E1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = C56MXRUHH4;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = SocialLess;
+				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = NO;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIFileSharingEnabled = NO;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.socialless.SocialLess;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		040090CEC300C6F686730130 /* Build configuration list for PBXNativeTarget "SocialLessTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8AB1834E8289ADCBE45CF5C6 /* Debug */,
+				712F6B5ABC2FF7CE79F09DE5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		76F8DEC3DFE0BDB465198890 /* Build configuration list for PBXProject "SocialLess" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				73EBF6644258C120893E685D /* Debug */,
+				0B0C687DF8B6B8DC790B519C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8BFF460D7F578FA85A9D64E2 /* Build configuration list for PBXNativeTarget "SocialLess" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CBF01FB5FC59558C33DCD2E1 /* Debug */,
+				76A094E1637673248418C55A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C36DD13B4FCEC53AF783CE02 /* Build configuration list for PBXNativeTarget "SocialLessUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8EB372E67C23D8292FCEEC52 /* Debug */,
+				AB1D87072E208850DF402D76 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 244210E48437B6556980A702 /* Project object */;
+}

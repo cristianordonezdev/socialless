@@ -61,9 +61,15 @@ enum BrowsingMode: String, Codable, CaseIterable, Identifiable {
 enum AvailabilityStatus: String, Codable { case verified, experimental, unavailable }
 
 struct PlatformCapability {
+    var platform: SocialPlatform?
     let browser: AvailabilityStatus = .experimental
-    let filtering: AvailabilityStatus = .unavailable
-    let notes = "Basic timed browsing only. Website login, messages and following views have not been verified on iPhone. Friends-only filtering is unavailable."
+    var filtering: AvailabilityStatus { platform == .instagram ? .experimental : .unavailable }
+    var notes: String {
+        if platform == .instagram {
+            return "Opens Instagram with a session timer. Experimental Reels and Explore navigation filters can be checked and enabled separately. It does not filter posts or guarantee a friends-only feed."
+        }
+        return "Opens the real website inside SocialLess with a session timer. Instagram has optional Reels and Explore navigation filters; Facebook and TikTok filters are unavailable. Website features may vary, and friends-only filtering is unavailable."
+    }
 }
 
 struct SessionConfiguration: Equatable {
@@ -126,6 +132,17 @@ struct AppSettings: Codable, Equatable {
     var defaultMode: BrowsingMode = .demo
     var keepHistory = true
     var weeklyGoalMinutes = 120
+    // Optional for backwards-compatible decoding of existing v1 preferences.
+    var filterPreferences: [String: FilterPreferences]?
+
+    func filters(for platform: SocialPlatform, mode: BrowsingMode) -> FilterPreferences {
+        filterPreferences?[platform.rawValue + "." + mode.rawValue] ?? FilterPreferences()
+    }
+
+    mutating func setFilters(_ preferences: FilterPreferences, for platform: SocialPlatform, mode: BrowsingMode) {
+        if filterPreferences == nil { filterPreferences = [:] }
+        filterPreferences?[platform.rawValue + "." + mode.rawValue] = preferences
+    }
 
     func minutes(for platform: SocialPlatform) -> Int {
         let value = defaultMinutes[platform] ?? 10

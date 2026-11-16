@@ -8,15 +8,18 @@ final class AppContainer {
     }
     private(set) var sessions: [SessionSummary] = []
     var notice: String?
+    let followingStore: FollowingListStore
     let engine: SessionEngine
     let repository: any SessionRepository
     let settingsRepository: any SettingsRepository
     let testSessionDuration: TimeInterval?
 
     init(repository: any SessionRepository, settingsRepository: any SettingsRepository,
-         time: any TimeProviding, testSessionDuration: TimeInterval? = nil) throws {
+         time: any TimeProviding, testSessionDuration: TimeInterval? = nil,
+         followingRepository: (any FollowingListRepository)? = nil) throws {
         self.repository = repository; self.settingsRepository = settingsRepository
         self.testSessionDuration = testSessionDuration
+        followingStore = FollowingListStore(repository: followingRepository ?? MemoryFollowingListRepository())
         settings = try settingsRepository.load()
         engine = SessionEngine(clock: MonotonicSessionClock(time: time), time: time, repository: repository)
         if try engine.recoverInterruptedSession() != nil {
@@ -29,6 +32,7 @@ final class AppContainer {
         var defaults = UserDefaults.standard
         var storeURL: URL?
         var fastDuration: TimeInterval?
+        var followingDirectory = URL.applicationSupportDirectory.appendingPathComponent("FollowingList", isDirectory: true)
         #if DEBUG
         let arguments = ProcessInfo.processInfo.arguments
         if arguments.contains("--uitesting") {
@@ -38,6 +42,10 @@ final class AppContainer {
             let directory = URL.applicationSupportDirectory.appendingPathComponent("UITesting", isDirectory: true)
             try FileManager.default.createDirectory(at: directory, withIntermediateDirectories: true)
             storeURL = directory.appendingPathComponent("sessions.store")
+            followingDirectory = directory.appendingPathComponent("FollowingList", isDirectory: true)
+            if arguments.contains("--reset-test-data") {
+                try FileFollowingListRepository(url: followingDirectory.appendingPathComponent("accounts.json")).delete()
+            }
             if arguments.contains("--fast-session") { fastDuration = 3 }
         }
         #endif
@@ -46,7 +54,8 @@ final class AppContainer {
         if arguments.contains("--uitesting"), arguments.contains("--reset-test-data") { try repository.deleteAll() }
         #endif
         return try AppContainer(repository: repository, settingsRepository: UserDefaultsSettingsRepository(defaults: defaults),
-                                time: SystemTimeProvider(), testSessionDuration: fastDuration)
+                                time: SystemTimeProvider(), testSessionDuration: fastDuration,
+                                followingRepository: FileFollowingListRepository(url: followingDirectory.appendingPathComponent("accounts.json")))
     }
 
     func saveSettings() {

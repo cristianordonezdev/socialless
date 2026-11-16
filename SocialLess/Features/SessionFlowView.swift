@@ -9,6 +9,7 @@ struct SessionFlowView: View {
     @State private var minutes = 10
     @State private var mode: BrowsingMode = .demo
     @State private var error: String?
+    @State private var websiteFilters = FilterPreferences()
     @AccessibilityFocusState private var completionFocused: Bool
 
     var body: some View {
@@ -16,7 +17,17 @@ struct SessionFlowView: View {
             Group {
                 switch container.engine.state {
                 case .idle: setup
-                case .active, .paused: BrowserView(engine: container.engine)
+                case .active, .paused:
+                    BrowserView(engine: container.engine, filterPreferences: Binding(
+                        get: { mode == .website ? websiteFilters : container.settings.filters(for: platform, mode: .demo) },
+                        set: {
+                            if mode == .website {
+                                websiteFilters = $0
+                                container.settings.setFilters($0.rememberedRuleSetVersion == nil ? FilterPreferences() : $0,
+                                                              for: platform, mode: .website)
+                            }
+                            else { container.settings.setFilters($0, for: platform, mode: .demo) }
+                        }), followingStore: container.followingStore)
                 case .completed(let summary): completion(summary)
                 }
             }.background(Theme.background)
@@ -65,7 +76,7 @@ struct SessionFlowView: View {
                         }.accessibilityIdentifier("session.mode")
                     }
                 }
-                Footnote(text: mode == .demo ? "A local sample page, with no real accounts or network access. Your timer and session history work just like a normal session." : PlatformCapability().notes)
+                Footnote(text: mode == .demo ? "A fictional sample for testing, with no accounts or internet needed. Demo filters hide navigation links only; sample posts stay visible. Your timer and session history work like a normal session." : PlatformCapability(platform: platform).notes)
                 if mode == .website {
                     Footnote(text: "This opens the service’s standard website. SocialLess is independent of these services. Review their terms before use. If login is blocked, return to the demo; there is no bypass.")
                 }
@@ -112,6 +123,8 @@ struct SessionFlowView: View {
         do {
             let configuration = try SessionConfiguration(platform: platform, intent: intent,
                 duration: container.testSessionDuration ?? Double(minutes * 60), mode: mode)
+            websiteFilters = container.settings.filters(for: platform, mode: .website).forNewWebsiteSession(
+                ruleSet: try? FilterRuleRegistry().rules(for: platform, mode: .website))
             try container.engine.start(configuration, keepHistory: container.settings.keepHistory)
             container.engine.setSceneActive(scenePhase == .active)
         } catch { self.error = "The session could not start because local storage is unavailable. Your existing data has been kept." }

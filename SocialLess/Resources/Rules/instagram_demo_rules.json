@@ -1,0 +1,23 @@
+{
+  "platform": "instagram",
+  "scope": "demo",
+  "schemaVersion": 1,
+  "ruleSetVersion": "0.1.0",
+  "availability": "experimental",
+  "rules": [
+    {
+      "id": "demo-discovery",
+      "title": "Hide sample Discover link",
+      "enabledByDefault": true,
+      "kind": "hideAnchorByPath",
+      "pathPrefix": "/socialless-demo/discover/"
+    },
+    {
+      "id": "demo-short-videos",
+      "title": "Hide sample Short videos link",
+      "enabledByDefault": true,
+      "kind": "hideAnchorByPath",
+      "pathPrefix": "/socialless-demo/short-videos/"
+    }
+  ]
+}

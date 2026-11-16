@@ -1,0 +1,8 @@
+{
+  "platform": "facebook",
+  "scope": "website",
+  "schemaVersion": 1,
+  "ruleSetVersion": "0.1.0",
+  "availability": "unavailable",
+  "rules": []
+}

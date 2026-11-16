@@ -31,11 +31,28 @@ struct SettingsView: View {
                         ForEach(SessionConfiguration.allowedMinutes, id: \.self) { Text("\($0) minutes").tag($0) }
                     }
                     LabeledContent("Website", value: "Experimental")
-                    LabeledContent("Distraction filters", value: "Unavailable")
+                    LabeledContent("Website filters", value: platform == .instagram ? "Experimental · Reels / Explore" : "Unavailable")
+                    if platform == .instagram {
+                        NavigationLink("Import following list") { FollowingListView(store: container.followingStore) }
+                            .accessibilityIdentifier("settings.following")
+                        Footnote(text: "Start a website session, then open Filters to check and try hiding the Reels navigation link.")
+                        if container.settings.filters(for: platform, mode: .website).rememberedRuleSetVersion != nil {
+                            Button("Forget saved website filters") {
+                                container.settings.setFilters(FilterPreferences(), for: platform, mode: .website)
+                            }.accessibilityIdentifier("settings.forgetWebsiteFilters")
+                            Footnote(text: "The next website session will start with filters off. This does not clear your website sign-in.")
+                        }
+                    }
+                    NavigationLink("Try demo filters") {
+                        FilterControlsView(platform: platform, mode: .demo,
+                                           ruleSet: try? FilterRuleRegistry().rules(for: platform, mode: .demo),
+                                           preferences: Binding(get: { container.settings.filters(for: platform, mode: .demo) },
+                                                                set: { container.settings.setFilters($0, for: platform, mode: .demo) }))
+                    }.accessibilityIdentifier("settings.filters.\(platform.rawValue)")
                 }
             }
             Section("Capabilities") {
-                Text("Basic timed browsing only").font(.headline)
+                Text("Timed browsing & experimental filters").font(.headline)
                 Footnote(text: PlatformCapability().notes)
                 LabeledContent("Native app shielding", value: "Unavailable")
                 Footnote(text: "Screen Time requires a later release, entitlements and real iPhone testing. SocialLess does not restrict other apps.")
@@ -82,11 +99,11 @@ struct PrivacyView: View {
             }
             Section("On this device") {
                 Text("With local history enabled, we store the platform, selected intention, demo/website mode, timestamps, active duration and end reason. There is no SocialLess account, backend or analytics SDK.")
-                Text("We do not read or extract social passwords, login cookies, messages, feed content or friend lists. Website session data is managed separately by WebKit and the website. A website may collect data under its own privacy policy.")
+                Text("We do not extract social passwords, login cookies or messages. If you import a following list, only its account names and import date are saved locally, excluded from backups. You can delete it separately. The experimental feed filter compares visible author links on-device without saving posts or author links. Website session data is managed separately by WebKit and the website. A website may collect data under its own privacy policy.")
                 Text("History and website data can be deleted separately in Settings. Device backups may include app data under your system backup settings.")
             }
             Section("Honest boundaries") {
-                Text("All three website integrations are experimental and unverified on a physical iPhone. Login, messages or following views may be unavailable. Filtering and native app shielding are unavailable in this version.")
+                Text("Website integrations remain experimental. Instagram browsing, timed expiry, retained sign-in and reversible Reels navigation filtering have been reported working on one iPhone; this does not guarantee every feature or account works. You can remember your filter choices after trying them. Each page is checked before remembered filters apply. Facebook and TikTok filters and native app shielding remain unavailable.")
                 Text("If a service rejects embedded browsing, SocialLess offers its offline demo. It does not bypass login restrictions or open another app automatically.")
             }
             Section("How time works") {

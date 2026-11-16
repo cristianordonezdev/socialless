@@ -1,0 +1,23 @@
+{
+  "platform": "instagram",
+  "scope": "website",
+  "schemaVersion": 1,
+  "ruleSetVersion": "0.3.0",
+  "availability": "experimental",
+  "rules": [
+    {
+      "id": "instagram-reels-navigation",
+      "title": "Hide Reels navigation links",
+      "enabledByDefault": true,
+      "kind": "hideInstagramReelsNavigation",
+      "pathPrefix": "/reels/"
+    },
+    {
+      "id": "instagram-explore-navigation",
+      "title": "Hide Explore navigation links",
+      "enabledByDefault": false,
+      "kind": "hideInstagramExploreNavigation",
+      "pathPrefix": "/explore/"
+    }
+  ]
+}

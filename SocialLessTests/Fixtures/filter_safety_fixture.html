@@ -1,0 +1,24 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; form-action 'none'; base-uri 'none'">
+<title>Filter safety fixture</title></head><body>
+<nav id="navigation" aria-label="Test navigation">
+<a id="discover" class="original" style="color:blue" href="https://www.instagram.com/socialless-demo/discover/">Discover sample</a>
+<a id="child" href="https://instagram.com/socialless-demo/discover/topic?ignored=1#part">Nested destination</a>
+<a id="videos" href="https://www.instagram.com/socialless-demo/short-videos">Short videos</a>
+<a id="prehidden" hidden="until-found" href="https://www.instagram.com/socialless-demo/discover/">Already hidden</a>
+<a id="boundary" href="https://instagram.com/socialless-demo/discover-more/">Different path</a>
+<a id="foreign" href="https://instagram.com.evil.invalid/socialless-demo/discover/">Foreign</a>
+<a id="prefix" href="https://evilinstagram.com/socialless-demo/discover/">Deceptive domain</a>
+<a id="otherPlatform" href="https://facebook.com/socialless-demo/discover/">Other platform</a>
+<a id="insecure" href="http://instagram.com/socialless-demo/discover/">Insecure</a>
+<a id="port" href="https://instagram.com:444/socialless-demo/discover/">Other port</a>
+<a id="userinfo" href="https://sample@instagram.com/socialless-demo/discover/">URL userinfo</a>
+<a id="query" href="https://instagram.com/accounts/login/?next=/socialless-demo/discover/">Sign in</a>
+<a id="recovery" href="https://instagram.com/socialless-demo/discover/recovery/">Recovery</a>
+<a id="encodedRecovery" href="https://instagram.com/socialless-demo/discover/%72ecovery/">Encoded recovery</a>
+<form><a id="inForm" href="https://instagram.com/socialless-demo/discover/">Form link</a><input id="input" value="fictional fixture"></form>
+<div role="dialog"><a id="inDialog" href="https://instagram.com/socialless-demo/discover/">Dialog link</a></div>
+</nav>
+<div role="navigation"><a id="roleNav" href="https://instagram.com/socialless-demo/discover/">Accessible navigation</a></div>
+<article id="post"><a id="inPost" href="https://instagram.com/socialless-demo/discover/">Ordinary post link</a><video id="friendVideo" controls></video></article>
+</body></html>

@@ -83,5 +83,35 @@ final class SessionRepositoryTests: XCTestCase {
         XCTAssertThrowsError(try UserDefaultsSettingsRepository(defaults: defaults).load())
         XCTAssertEqual(defaults.data(forKey: "socialless.settings.v1"), data)
     }
+
+    @MainActor func testRememberedWebsiteChoicesRoundTripRevokeAndStaySeparate() throws {
+        let name = "socialless.tests." + UUID().uuidString
+        let defaults = try XCTUnwrap(UserDefaults(suiteName: name))
+        defer { defaults.removePersistentDomain(forName: name) }
+        let repository = UserDefaultsSettingsRepository(defaults: defaults)
+        let container = try AppContainer(repository: MemoryRepository(), settingsRepository: repository, time: FakeTime())
+        let rules = try FilterRuleRegistry().rules(for: .instagram, mode: .website)
+        let choice = FilterPreferences(enabled: true, ruleOverrides: ["instagram-reels-navigation": false],
+                                       rememberedRuleSetVersion: rules.ruleSetVersion,
+                                       approvedRuleIDs: ["instagram-explore-navigation"])
+        container.settings.keepHistory = false
+        container.settings.defaultMinutes[.instagram] = 20
+        container.settings.setFilters(FilterPreferences(enabled: true), for: .instagram, mode: .demo)
+        container.settings.setFilters(choice, for: .instagram, mode: .website)
+        let reopened = try UserDefaultsSettingsRepository(defaults: defaults).load()
+        XCTAssertEqual(reopened.filters(for: .instagram, mode: .website).forNewWebsiteSession(ruleSet: rules), choice)
+        XCTAssertFalse(reopened.filters(for: .facebook, mode: .website).enabled)
+        XCTAssertTrue(reopened.filters(for: .instagram, mode: .demo).enabled)
+        XCTAssertFalse(reopened.keepHistory)
+        XCTAssertEqual(reopened.minutes(for: .instagram), 20)
+        var off = choice; off.enabled = false
+        container.settings.setFilters(off, for: .instagram, mode: .website)
+        XCTAssertFalse(try repository.load().filters(for: .instagram, mode: .website).forNewWebsiteSession(ruleSet: rules).enabled)
+        container.settings.setFilters(FilterPreferences(), for: .instagram, mode: .website)
+        let forgotten = try repository.load()
+        XCTAssertEqual(forgotten.filters(for: .instagram, mode: .website).forNewWebsiteSession(ruleSet: rules), FilterPreferences())
+        XCTAssertTrue(forgotten.filters(for: .instagram, mode: .demo).enabled)
+        XCTAssertFalse(forgotten.keepHistory)
+    }
 }
 

@@ -46,10 +46,10 @@ for name, kind, ext, product_type in (
     for file in sorted((ROOT / name).rglob("*")):
         if not file.is_file() or ".xcassets/" in str(file):
             continue
-        if file.suffix not in (".swift", ".html", ".json", ".xcprivacy"):
+        if file.suffix not in (".swift", ".html", ".json", ".js", ".xcprivacy"):
             continue
         rel = str(file.relative_to(ROOT))
-        file_type = {".swift": "sourcecode.swift", ".html": "text.html", ".json": "text.json", ".xcprivacy": "text.xml"}[file.suffix]
+        file_type = {".swift": "sourcecode.swift", ".html": "text.html", ".json": "text.json", ".js": "sourcecode.javascript", ".xcprivacy": "text.xml"}[file.suffix]
         ref = obj(rel, "PBXFileReference", lastKnownFileType=file_type, path=rel, sourceTree="SOURCE_ROOT")
         refs.append(ref)
         build = obj(rel + "build", "PBXBuildFile", fileRef=ref)
@@ -68,6 +68,8 @@ for name, kind, ext, product_type in (
     if name == "SocialLess":
         settings.update(INFOPLIST_KEY_CFBundleDisplayName="SocialLess", INFOPLIST_KEY_UILaunchScreen_Generation="YES", INFOPLIST_KEY_UIApplicationSceneManifest_Generation="YES", INFOPLIST_KEY_UISupportedInterfaceOrientations="UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight", INFOPLIST_KEY_UIFileSharingEnabled="NO", INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace="NO", MARKETING_VERSION="0.1.0", CURRENT_PROJECT_VERSION="1", ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME="AccentColor")
         settings["ASSETCATALOG_COMPILER_APPICON_NAME"] = "AppIcon"
+        # Preserve the development team already selected in the user's checked-in project.
+        settings["DEVELOPMENT_TEAM"] = "C56MXRUHH4"
     else:
         proxy = obj(name + "proxy", "PBXContainerItemProxy", containerPortal=oid("project"), proxyType=1, remoteGlobalIDString=oid("SocialLesstarget"), remoteInfo="SocialLess")
         deps = [obj(name + "dependency", "PBXTargetDependency", target=oid("SocialLesstarget"), targetProxy=proxy)]

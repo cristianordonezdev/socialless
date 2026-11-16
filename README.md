@@ -9,10 +9,12 @@ A native, offline-first iPhone app for intentional social media sessions. SwiftU
 - Three finite, clearly fictional offline sample pages. Demo is the default.
 - Monotonic active-time accounting, pause/resume, a one-minute warning, crash recovery and idempotent session storage.
 - Optional local history, daily/weekly insights, platform breakdowns and a weekly time intention.
-- Restricted experimental website browsing: selected platform’s HTTPS origins only; errors/retry/back/close; no automatic external launch.
+- Restricted experimental website browsing: selected platform’s HTTPS origins only; errors/retry/back/close; blocked embedded frames do not replace the main page; no automatic external launch.
+- Reversible, opt-in demo filters: per-platform switches, individual navigation rules, live health and restoration without reloading.
+- Instagram Reels / Explore navigation pilot: check the current page, explicitly enable, restore without reloading. Starts off unless you explicitly choose to remember your filters.
 - Separate confirmed deletion of history and WebKit website data; privacy/limitations in the app.
 
-**Website login, feeds, messages and friends/following destinations are unverified on a physical iPhone. Filters and Screen Time shielding are unavailable.** The offline sample is not a social integration. A blocked service has an offline fallback, never a bypass.
+**All website integrations remain experimental.** The user reported Instagram feed access, expiry and retained sign-in on an iPhone 13 Pro / iOS 27.2, and subsequently reported successful Reels navigation hiding. The user also confirmed restoration and access to messages/stories while filtering; the user also reported that Reels stayed active after ending and reopening a session. Remembered Off, process relaunch and Explore still need device validation. Facebook/TikTok filters, friends-only feeds and Screen Time shielding are unavailable. The offline sample is not a social integration. A blocked service has an offline fallback, never a bypass.
 
 ## Run
 
@@ -45,6 +47,14 @@ python3 scripts/generate_project.py
 
 The dependency-free generator owns the project and shared scheme. Make lasting build-setting changes in the generator. The app icon is an original vector construction; regenerate with `swift scripts/generate_icon.swift` if needed.
 
+## Try the reversible filters
+
+Run an **Offline demo** session for any platform, tap **Filters**, and enable **demo filters**. The two synthetic discovery links disappear; sample friends and posts remain. Turn off an individual rule or the main switch to restore those links without reloading. The timer continues while the controls are open. You can also set preferences under **Settings → [platform] → Try demo filters**.
+
+For the **Instagram website pilot**, open the feed → **Filters → Check Reels link**. Checking does not hide anything. If a compatible link is found, switch on **Enable experimental filters**, then tap Done. Turn it off to restore the navigation entry. No match keeps the switch locked. Rule version **0.3.0** also recognizes labeled Reels controls outside semantic navigation and distinguishes unsupported layouts, partial coverage and style blocking. After the previous detector failed, the user reported hiding success following this correction; the user also confirmed that Off restores the entries and messages/stories remain accessible. This does not remove Reels from feed posts or other links. **Explore** starts off and has a separate **Check Explore link** button and switch. Its check leaves active Reels filtering unchanged; it never hides search or tag subpaths. After filters are active, optionally turn on **Remember for Instagram**. Your master/per-rule choices then survive sessions and app relaunch, with automatic compatibility checking before hiding. Unsupported layouts stay visible; updated rule versions require a new check. Off is remembered too. Turn Remember off to keep only the current session’s choices, or use **Settings → Instagram → Forget saved website filters**. Sign-in stays managed separately by WebKit.
+
+The six bundled JSON catalogs separate demo and website rules. Facebook/TikTok website catalogs remain empty and install no filtering script. Instagram's candidate exact navigation destinations are gated behind read-only checks and explicit opt-in. Version 0.3.0 requires a fresh Reels check/Remember choice once; existing sign-in, history and demo settings are retained. Explore has separate remembered consent and never turns on merely because Reels was remembered. The demo's `/socialless-demo/…` paths are fictional, not proposed Instagram/Facebook/TikTok destinations. See `docs/FILTERS.md` for the engine contract and device-validation gate.
+
 ## Physical iPhone
 
 1. Select your own unique bundle identifier and Apple development team in Xcode. Keep permanent settings in the generator if regenerating.
@@ -68,3 +78,12 @@ See `docs/IMPLEMENTATION_STATUS.md` for executed verification, `docs/TASKS.md` f
 
 Simulator captures are in `docs/screenshots/`: dashboard, offline session and completion. They show actual running native UI with fictional demo content.
 
+
+
+### Import accounts you follow (experimental feed pilot)
+
+Build/install the current app, then open **Settings → Instagram → Import following list**. Export your Followers and following information from Instagram in **JSON**, unzip it in Files, and select **following.json**. Review the preview and tap **Save this list** (or **Replace saved list**). ZIP/HTML and followers files are not accepted. Only account names and the import date are saved locally, excluded from backups; the source export is not copied or deleted.
+
+Start an Instagram **Website** session, open **Filters**, and enable **Only imported accounts**. This separate switch starts Off every session. It hides recognized non-imported authors and identifiable sponsored cards in the home feed; unknown layouts/authors remain visible. It does not automatically obtain/update the list, associate it with your login, fetch missing posts or guarantee friends-only content. Use an up-to-date export from the account currently signed in. Replacing/deleting the list turns the filter Off. Manage/delete it from Settings or the session's Filters screen. Reels/Explore navigation controls and Remember remain independent.
+
+The parser and feed layout are tested with fictional fixtures. Actual file-provider import and current Instagram feed behavior require physical-device validation; see `docs/MANUAL_QA.md`.
